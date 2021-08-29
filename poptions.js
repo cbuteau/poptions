@@ -80,11 +80,30 @@ function arrayCompare(arrayOne, arrayTwo) {
   }
 }
 
+function compareEntries(optionEntry, validationEntry) {
+      if (optionEntry.type === validationEntry.type) {
+        if (optionEntry.type === CODES.OBJECT) {
+          return compareMaps(optionEntry.more, validationEntry.more)
+        }
+        if (optionEntry.type === CODES.FUNCTION) {
+          // TODO allow and option where the paramCount of cuntions is NOT exact.
+          return optionEntry.more.paramCount === validationEntry.more.paramCount;
+        }
+      } else {
+        return false;
+      }
+}
+
 function compareMaps(optionMap, validationMap) {
   let optsKeyList = Object.keys(optionMap);
   let valKeyList = Object.keys(validationMap);
   if (arrayCompare(optsKeyList, valKeyList)) {
-
+    for (let i = 0; i < optsKeyList.length; i++) {
+      let propName = optsKeyList[i];
+      let optEntry = optionMap[propName];
+      let valEntry = validationMap[propName];
+      return compareEntries(optEntry, valEntry);
+    }
   } else {
     return false;
   }
