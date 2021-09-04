@@ -1,0 +1,26 @@
+{
+  "name": "poptions",
+  "version": "1.0.0",
+  "description": "So I wanted to build a general purpose options checker.",
+  "homepage": "https://github.com/cbuteau/poptions#readme",
+  "bugs": {
+    "url": "https://github.com/cbuteau/poptions/issues"
+  },
+  "license": "UNLICENSED",
+  "author": "Christopher W Buteau <cbuteau@gmail.com>",
+  "main": "poptions.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbuteau/poptions.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "karma": "6.3.4",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-jasmine": "4.0.1",
+    "jasmine": "3.9.0"
+  },
+  "devDependencies": {}
+}
